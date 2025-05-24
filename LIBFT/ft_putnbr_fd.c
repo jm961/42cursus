@@ -18,3 +18,13 @@ void ft_putnbr_fd(int n, int fd)
     char c = (n % 10) + '0';
     write(fd, &c, 1);
 }
+
+// int main(void)
+// {
+//     int fd = 1;
+//     ft_putnbr_fd(42, fd);
+//     write(fd, "\n", 1);
+//     ft_putnbr_fd(-2147483648, fd);
+//     write(fd, "\n", 1);
+//     return 0;
+// }

@@ -35,3 +35,14 @@ void *ft_memmove(void *dst, const void *src, int len)
 
     return dst;
 }
+
+// int main(void)
+// {
+//     char src[] = "Hello, World!";
+//     char dst[20];
+
+//     ft_memmove(dst, src, 13);
+//     printf("Destination: %s\n", dst);
+
+//     return 0;
+// }

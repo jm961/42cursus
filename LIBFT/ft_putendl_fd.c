@@ -12,3 +12,13 @@ void ft_putendl_fd(char *s, int fd)
     }
     write(fd, "\n", 1);
 }
+
+// int main(void)
+// {
+//     char str[] = "Hello, World!";
+//     int fd = 1; // Standard output
+
+//     ft_putendl_fd(str, fd);
+
+//     return 0;
+// }
