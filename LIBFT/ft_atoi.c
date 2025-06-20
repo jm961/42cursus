@@ -1,4 +1,18 @@
-int atoi(const char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/20 01:28:26 by jm_eid            #+#    #+#             */
+/*   Updated: 2025/06/20 01:28:50 by jm_eid           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int ft_atoi(const char *str)
 {
     int i;
     int sign;
@@ -23,3 +37,18 @@ int atoi(const char *str)
     }
     return (result * sign);
 }
+
+// int main(void)
+// {
+//     const char *test1 = "   -42";
+//     const char *test2 = "42";
+//     const char *test3 = "   +123abc";
+//     const char *test4 = "  \t\n\v\f\r  -2147483648";
+
+//     printf("Test 1: %d\n", atoi(test1)); 
+//     printf("Test 2: %d\n", atoi(test2)); 
+//     printf("Test 3: %d\n", atoi(test3)); 
+//     printf("Test 4: %d\n", atoi(test4));
+
+//     return 0;
+// }
