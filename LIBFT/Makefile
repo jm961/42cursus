@@ -15,7 +15,12 @@ SRCS =  ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 	    ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
 	    ft_tolower.c ft_toupper.c ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 		ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-		ft_lstmap.c ft_lstnew.c ft_lstsize.c
+		ft_lstmap.c ft_lstnew.c ft_lstsize.c \
+		ft_formats.c ft_hexlen.c ft_numlen.c ft_printchar.c \
+		ft_printf.c ft_printhex.c ft_printnum.c ft_printpercent.c \
+		ft_printptr.c ft_printstr.c ft_printunsigned.c ft_ptrlen.c \
+		ft_puthex.c ft_putptr.c ft_uitoa.c \
+		get_next_line.c get_next_line_utils.c
 
 
 OBJS = $(SRCS:.c=.o)

@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                LIBFT                                       */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 #define LIBFT_H
 
 #include <stdlib.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <stdint.h>
+
+#ifndef BUFFER_SIZE
+#define BUFFER_SIZE 1000
+#endif
 
 typedef struct s_list
 {
@@ -56,5 +67,34 @@ void ft_lstdelone(t_list *lst, void (*del)(void *));
 void ft_lstclear(t_list **lst, void (*del)(void *));
 void ft_lstiter(t_list *lst, void (*f)(void *));
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/* ************************************************************************** */
+/*                                FT_PRINTF                                  */
+/* ************************************************************************** */
+
+int ft_printf(const char *input, ...);
+int ft_printchar(int c);
+int ft_printstr(char *s);
+int ft_printnum(int n);
+int ft_printunsigned(unsigned int n);
+int ft_print_hex(unsigned int num, const char format);
+int ft_printptr(void *ptr);
+int ft_printpercent(void);
+int ft_numlen(unsigned int num);
+int ft_hexlen(unsigned int num);
+int ft_ptr_len(uintptr_t num);
+int formats(va_list *args, const char format);
+char *ft_uitoa(unsigned int n);
+void ft_puthex(unsigned int num, const char format);
+void ft_putptr(uintptr_t num);
+
+/* ************************************************************************** */
+/*                              GET_NEXT_LINE                                */
+/* ************************************************************************** */
+
+char *get_next_line(int fd);
+char *ft_strjoin_gnl(char *left_str, char *buff);
+char *ft_get_line(char *left_str);
+char *ft_new_left_string(char *left_str);
 
 #endif
