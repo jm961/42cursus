@@ -6,7 +6,7 @@
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 20:04:32 by jeid              #+#    #+#             */
-/*   Updated: 2025/07/04 23:25:24 by jm_eid           ###   ########.fr       */
+/*   Updated: 2025/07/05 19:49:54 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int ft_printf(const char *input, ...)
 	{
 		if (input[i] == '%' && input[i + 1])
 		{
-			output += formats(args, input[i + 1]);
+			output += formats(&args, input[i + 1]);
 			i += 2;
 		}
 		else
