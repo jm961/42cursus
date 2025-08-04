@@ -6,14 +6,14 @@
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 20:00:45 by jeid              #+#    #+#             */
-/*   Updated: 2025/07/05 19:49:54 by jm_eid           ###   ########.fr       */
+/*   Updated: 2025/08/04 04:26:04 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 #define FT_PRINTF_H
 
-#include "libft.h"
+#include "../libft/libft.h"
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdint.h>
