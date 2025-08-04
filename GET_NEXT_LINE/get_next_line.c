@@ -6,7 +6,7 @@
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 18:49:35 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/07/05 19:11:53 by jm_eid           ###   ########.fr       */
+/*   Updated: 2025/07/29 23:01:16 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char *ft_read_to_left_string(int fd, char *left_string)
     char *buffer;
     int rd_bytes;
 
-    buffer = malloc((BUFFER_SIZE + 1) * sizeof (char));
+    buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
     if (!buffer)
         return (NULL);
     rd_bytes = 1;

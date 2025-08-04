@@ -54,4 +54,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+test: $(NAME)
+	$(CC) $(CFLAGS) test_formats.c -L. -lftprintf -o test_formats
+	./test_formats
+
+.PHONY: all bonus clean fclean re test
