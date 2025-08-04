@@ -6,13 +6,13 @@
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:34:22 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/07/05 19:41:02 by jm_eid           ###   ########.fr       */
+/*   Updated: 2025/08/04 05:55:40 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-char *ft_read_to_left_string(int fd, char *left_str)
+char *ft_read_to_left_str(int fd, char *left_str)
 {
     char *buff;
     int rd_bytes;
@@ -42,8 +42,8 @@ char *get_next_line(int fd)
     static char *left_str[4096];
 
     if (fd < 0 || BUFFER_SIZE <= 0)
-        return (0);
-    left_str[fd] = ft_read_to_left_string(fd, left_str[fd]);
+        return (NULL);
+    left_str[fd] = ft_read_to_left_str(fd, left_str[fd]);
     if (!left_str[fd])
         return (NULL);
     line = ft_get_line(left_str[fd]);

@@ -1,5 +1,13 @@
 /* ************************************************************************** */
-/*                                LIBFT                                       */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/04 00:00:00 by jm_eid            #+#    #+#             */
+/*   Updated: 2025/08/04 06:38:16 by jm_eid           ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
@@ -20,6 +28,10 @@ typedef struct s_list
     struct s_list *next;
 } t_list;
 
+/* ************************************************************************** */
+/*                           CHARACTER FUNCTIONS                             */
+/* ************************************************************************** */
+
 int ft_isalpha(int c);
 int ft_isdigit(int c);
 int ft_isalnum(int c);
@@ -28,6 +40,10 @@ int ft_isprint(int c);
 int ft_toupper(int c);
 int ft_tolower(int c);
 
+/* ************************************************************************** */
+/*                           MEMORY FUNCTIONS                                */
+/* ************************************************************************** */
+
 void ft_bzero(void *s, size_t n);
 void *ft_calloc(size_t count, size_t size);
 void *ft_memcpy(void *dst, const void *src, size_t n);
@@ -35,7 +51,10 @@ void *ft_memmove(void *dst, const void *src, size_t len);
 void *ft_memset(void *b, int c, size_t len);
 void *ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
-int ft_atoi(const char *str);
+
+/* ************************************************************************** */
+/*                           STRING FUNCTIONS                                */
+/* ************************************************************************** */
 
 char *ft_itoa(int n);
 char *ft_substr(char const *s, unsigned int start, size_t len);
@@ -51,12 +70,22 @@ size_t ft_strlen(const char *s);
 char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
-char *ft_strnstr(const char *haystack, const char *needle, size_t len);
+char *ft_strnstr(const char *haystack, const char *needle,
+                 size_t len);
+int ft_atoi(const char *str);
+
+/* ************************************************************************** */
+/*                            OUTPUT FUNCTIONS                               */
+/* ************************************************************************** */
 
 void ft_putchar_fd(char c, int fd);
 void ft_putstr_fd(char *s, int fd);
 void ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
+
+/* ************************************************************************** */
+/*                           LINKED LIST FUNCTIONS                           */
+/* ************************************************************************** */
 
 t_list *ft_lstnew(void *content);
 void ft_lstadd_front(t_list **lst, t_list *new);
@@ -72,29 +101,33 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /*                                FT_PRINTF                                  */
 /* ************************************************************************** */
 
-int ft_printf(const char *input, ...);
-int ft_printchar(int c);
-int ft_printstr(char *s);
-int ft_printnum(int n);
-int ft_printunsigned(unsigned int n);
-int ft_print_hex(unsigned int num, const char format);
-int ft_printptr(void *ptr);
-int ft_printpercent(void);
-int ft_numlen(unsigned int num);
-int ft_hexlen(unsigned int num);
-int ft_ptr_len(uintptr_t num);
-int formats(va_list *args, const char format);
+int ft_printf(const char *format, ...);
+int ft_handle_format(va_list *args, char specifier);
+
+/* Basic output functions with count */
+int ft_putchar_count(char c);
+int ft_putstr_count(char *str);
+
+/* Number conversion and output with count */
+int ft_putnbr_count(int n);
+int ft_putunbr_count(unsigned int n);
+int ft_puthex_count(unsigned long num, int uppercase);
+int ft_putptr_count(void *ptr);
+
+/* Utility functions for printf */
+int ft_numlen_base(unsigned long num, int base);
 char *ft_uitoa(unsigned int n);
-void ft_puthex(unsigned int num, const char format);
-void ft_putptr(uintptr_t num);
+int ft_numlen(unsigned int num);
+int ft_numlen(unsigned int num);
 
 /* ************************************************************************** */
 /*                              GET_NEXT_LINE                                */
 /* ************************************************************************** */
 
 char *get_next_line(int fd);
+char *ft_read_to_left_str(int fd, char *left_str);
 char *ft_strjoin_gnl(char *left_str, char *buff);
 char *ft_get_line(char *left_str);
-char *ft_new_left_string(char *left_str);
+char *ft_new_left_str(char *left_str);
 
 #endif

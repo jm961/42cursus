@@ -6,7 +6,7 @@
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:36:49 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/07/05 19:37:26 by jm_eid           ###   ########.fr       */
+/*   Updated: 2025/08/04 05:55:40 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char *ft_strjoin(char *left_str, char *buff)
     if (!left_str)
     {
         left_str = (char *)malloc(1 * sizeof(char));
+        if (!left_str)
+            return (NULL);
         left_str[0] = '\0';
     }
     if (!left_str || !buff)

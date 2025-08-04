@@ -6,7 +6,7 @@
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 03:34:05 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/08/04 03:48:43 by jm_eid           ###   ########.fr       */
+/*   Updated: 2025/08/04 05:14:43 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,27 @@ int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
+    char **split_args;
 
     if (argc < 2)
         return (0);
-    if (!is_valid_input(argv))
-        error_exit();
-    stack_a = parse_input(argc, argv);
+    if (argc == 2)
+    {
+        split_args = ft_split(argv[1], ' ');
+        if (!split_args || !split_args[0] || !is_valid_split_input(split_args))
+        {
+            free_split(split_args);
+            error_exit();
+        }
+        stack_a = parse_split_input(split_args);
+        free_split(split_args);
+    }
+    else
+    {
+        if (!is_valid_input(argv))
+            error_exit();
+        stack_a = parse_input(argc, argv);
+    }
     if (!stack_a || has_duplicates(stack_a))
     {
         stack_free(&stack_a);

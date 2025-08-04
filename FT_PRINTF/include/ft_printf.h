@@ -6,7 +6,7 @@
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 20:00:45 by jeid              #+#    #+#             */
-/*   Updated: 2025/08/04 04:26:04 by jm_eid           ###   ########.fr       */
+/*   Updated: 2025/08/04 05:44:50 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,24 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-char *ft_uitoa(unsigned int n);
-void ft_putptr(uintptr_t num);
-void ft_puthex(unsigned int num, const char format);
-int ft_ptr_len(uintptr_t num);
-int ft_printunsigned(unsigned int n);
-int ft_printstr(char *s);
-int ft_printptr(void *ptr);
-int ft_printpercent(void);
-int ft_printnum(int n);
-int ft_print_hex(unsigned int num, const char format);
-int ft_printf(const char *input, ...);
-int ft_printchar(int c);
-int ft_numlen(unsigned int num);
-int ft_hexlen(unsigned int num);
-int formats(va_list *args, const char format);
+/* Main printf function */
+int ft_printf(const char *format, ...);
+
+/* Format handlers */
+int ft_handle_format(va_list *args, char specifier);
+
+/* Basic output functions */
+int ft_putchar_count(char c);
+int ft_putstr_count(char *str);
+
+/* Number conversion and output */
+int ft_putnbr_count(int n);
+int ft_putunbr_count(unsigned int n);
+int ft_puthex_count(unsigned long num, int uppercase);
+int ft_putptr_count(void *ptr);
+
+/* Utility functions */
+int ft_numlen_base(unsigned long num, int base);
+char *ft_uitoa_base(unsigned long num, char *base_chars);
 
 #endif

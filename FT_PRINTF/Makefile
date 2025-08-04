@@ -18,11 +18,7 @@ LIBFT_SRCS = libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c \
 			libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c \
 			libft/ft_toupper.c
 
-PRINTF_SRCS = printf/ft_formats.c printf/ft_hexlen.c printf/ft_numlen.c \
-			printf/ft_printchar.c printf/ft_printf.c printf/ft_printhex.c \
-			printf/ft_printnum.c printf/ft_printpercent.c printf/ft_printptr.c \
-			printf/ft_printstr.c printf/ft_printunsigned.c printf/ft_ptrlen.c \
-			printf/ft_puthex.c printf/ft_putptr.c printf/ft_uitoa.c
+PRINTF_SRCS = printf/ft_printf.c printf/ft_output.c printf/ft_utils.c
 
 SRCS = $(LIBFT_SRCS) $(PRINTF_SRCS)
 

@@ -6,7 +6,7 @@
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 03:34:05 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/08/04 04:04:28 by jm_eid           ###   ########.fr       */
+/*   Updated: 2025/08/04 05:14:43 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,34 @@ t_stack *parse_input(int argc, char **argv)
     while (i < argc)
     {
         if (!ft_safe_atoi(argv[i], &num))
+        {
+            stack_free(&stack);
+            return (NULL);
+        }
+        new_node = stack_new(num);
+        if (!new_node)
+        {
+            stack_free(&stack);
+            return (NULL);
+        }
+        stack_add_bottom(&stack, new_node);
+        i++;
+    }
+    return (stack);
+}
+
+t_stack *parse_split_input(char **split_args)
+{
+    t_stack *stack;
+    t_stack *new_node;
+    int num;
+    int i;
+
+    stack = NULL;
+    i = 0;
+    while (split_args[i])
+    {
+        if (!ft_safe_atoi(split_args[i], &num))
         {
             stack_free(&stack);
             return (NULL);

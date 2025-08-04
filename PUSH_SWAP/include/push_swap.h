@@ -6,7 +6,7 @@
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:57:36 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/08/04 03:48:55 by jm_eid           ###   ########.fr       */
+/*   Updated: 2025/08/04 05:14:43 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,14 @@ int stack_size(t_stack *stack);
 void stack_free(t_stack **stack);
 
 // Input validation and parsing
+int is_valid_number(char *str);
 int is_valid_input(char **argv);
+int is_valid_split_input(char **split_args);
 int has_duplicates(t_stack *stack);
 int is_sorted(t_stack *stack);
 t_stack *parse_input(int argc, char **argv);
+t_stack *parse_split_input(char **split_args);
+void free_split(char **split);
 
 // Algorithm functions
 void assign_index(t_stack **stack);
