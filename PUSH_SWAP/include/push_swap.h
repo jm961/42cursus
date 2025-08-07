@@ -6,7 +6,7 @@
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:57:36 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/08/04 05:14:43 by jm_eid           ###   ########.fr       */
+/*   Updated: 2025/08/04 15:34:45 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define PUSH_SWAP_H
 
 #include "../libft/libft.h"
-#include <unistd.h>
-#include <stdlib.h>
 #include <limits.h>
 
 typedef struct s_stack
