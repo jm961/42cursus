@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   checker_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 06:16:15 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/09/18 20:23:49 by jm_eid           ###   ########.fr       */
+/*   Created: 2025/09/18 21:07:09 by jm_eid            #+#    #+#             */
+/*   Updated: 2025/09/18 21:07:12 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-void ft_putstr_fd(char const *s, int fd)
+void	ft_error_ch(void)
 {
-	if (!s)
-		return;
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }

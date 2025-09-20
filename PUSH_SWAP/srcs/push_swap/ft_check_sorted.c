@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_check_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 06:16:15 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/09/18 20:23:49 by jm_eid           ###   ########.fr       */
+/*   Created: 2025/09/18 19:59:05 by jm_eid            #+#    #+#             */
+/*   Updated: 2025/09/18 19:59:07 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-void ft_putstr_fd(char const *s, int fd)
+// This function checks if the stack is sorted.
+int	ft_checksorted(t_stack *stack_a)
 {
-	if (!s)
-		return;
-	while (*s)
+	int	i;
+
+	i = stack_a->nbr;
+	while (stack_a)
 	{
-		write(fd, s, 1);
-		s++;
+		if (i > stack_a->nbr)
+			return (0);
+		i = stack_a->nbr;
+		stack_a = stack_a->next;
 	}
+	return (1);
 }

@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_check_dup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 06:16:15 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/09/18 20:23:49 by jm_eid           ###   ########.fr       */
+/*   Created: 2025/09/18 19:59:01 by jm_eid            #+#    #+#             */
+/*   Updated: 2025/09/18 19:59:03 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-void ft_putstr_fd(char const *s, int fd)
+// This function checks if the stack includes
+// any duplicate numbers.
+int	ft_checkdup(t_stack *a)
 {
-	if (!s)
-		return;
-	while (*s)
+	t_stack	*tmp;
+
+	while (a)
 	{
-		write(fd, s, 1);
-		s++;
+		tmp = a->next;
+		while (tmp)
+		{
+			if (a->nbr == tmp->nbr)
+				return (1);
+			tmp = tmp->next;
+		}
+		a = a->next;
 	}
+	return (0);
 }

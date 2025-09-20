@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 06:16:15 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/09/18 20:23:49 by jm_eid           ###   ########.fr       */
+/*   Created: 2025/09/18 19:59:30 by jm_eid            #+#    #+#             */
+/*   Updated: 2025/09/18 19:59:31 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-void ft_putstr_fd(char const *s, int fd)
+// This function frees the stack.
+void	ft_free(t_stack **lst)
 {
-	if (!s)
-		return;
-	while (*s)
+	t_stack	*tmp;
+
+	if (!lst)
+		return ;
+	while (*lst)
 	{
-		write(fd, s, 1);
-		s++;
+		tmp = (*lst)->next;
+		(*lst)->nbr = 0;
+		free(*lst);
+		*lst = tmp;
 	}
 }

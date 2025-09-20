@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_stack_new.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jm_eid <jm_eid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 06:16:15 by jm_eid            #+#    #+#             */
-/*   Updated: 2025/09/18 20:23:49 by jm_eid           ###   ########.fr       */
+/*   Created: 2025/09/18 20:00:08 by jm_eid            #+#    #+#             */
+/*   Updated: 2025/09/18 20:00:09 by jm_eid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-void ft_putstr_fd(char const *s, int fd)
+// Creates new stack node with given number.
+t_stack	*ft_stack_new(int content)
 {
-	if (!s)
-		return;
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	t_stack	*new;
+
+	new = malloc(sizeof (t_stack));
+	if (!new)
+		ft_error();
+	new->nbr = content;
+	new->next = NULL;
+	return (new);
 }
